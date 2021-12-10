@@ -32,8 +32,16 @@ def check_win(board):
         for row in board:
             check.append(row[i])
         if check.count(check[0]) == len(check) and check[0] != 0:
-   #horizontal win
-    for row in board:
-        print(row)
+        print("Congratulations! ${player_id} won!")
+        #horizontal win
+        for row in board:
+            print(row)
         if row.count(row[0]) == len(row) and row[0] != 0:
-            print(`Congratulations! ${player_id} won!`
+            print("Congratulations! ${player_id} won!")
+    #diagonal win
+        diagonals = []
+        for y in range(len(board)):
+            diagonals.append(board[y][y])
+        for col,row in enumerate(reversed(range(len(board)))):
+            diagonals.append(board[row][col])
+            print("Congratulations! ${player_id} won!")
